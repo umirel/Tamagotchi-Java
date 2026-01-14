@@ -22,7 +22,7 @@ public class Main {
                     comer();
                     break;
                 case 3:
-                    System.out.println("Opción Jugar seleccionada (luego)");
+                    jugar();
                     break;
                 case 4:
                     System.out.println("Opción Dormir seleccionada (luego)");
@@ -100,4 +100,18 @@ public class Main {
             mostrarEstado();
         }
     }
+
+    private static void jugar() {
+        if (diversion >= 10) {
+            System.out.println("Ahora no me apetece jugar");
+        } else {
+            diversion += 3;
+            if (diversion > 10) {
+                diversion = 10;
+            }
+            saciedad -= 1;
+            energia -= 1;
+            System.out.println("¡Yuhu! Nos lo estamos pasando genial.");
+            mostrarEstado();
+        }
 }
