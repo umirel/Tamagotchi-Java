@@ -7,6 +7,7 @@ public class Main {
     static int saciedad = 6;
     static int energia = 6;
     static int diversion = 6;
+    static int experiencia = 0;
 
     public static void main(String[] args) {
         int opcion;
@@ -27,6 +28,9 @@ public class Main {
                 case 4:
                     dormir();
                     break;
+                case 5:
+                    entrenar();
+                    break;
                 case 0:
                     System.out.println("¡Hasta luego!");
                     break;
@@ -43,13 +47,14 @@ public class Main {
             System.out.println("2. Comer");
             System.out.println("3. Jugar");
             System.out.println("4. Dormir");
+            System.out.println("5. Entrenar");
             System.out.println("----------------");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción del menú: ");
 
             if (sc.hasNextInt()) {
                 opcion = sc.nextInt();
-                if (opcion < 0 || opcion > 4) {
+                if (opcion < 0 || opcion > 5) {
                     System.out.println("Error. Has de elejir entre (0-4).");
                 }
             } else {
@@ -62,7 +67,7 @@ public class Main {
 
     private static void mostrarEstado(){
         System.out.println("\n--- ESTADO ACTUAL ---");
-        System.out.println("Saciedad: " + saciedad + " | Energía: " + energia + " | Diversión: " + diversion);
+        System.out.println("Saciedad: " + saciedad + " | Energía: " + energia + " | Diversión: " + diversion + " | EXP: " + experiencia);
 
         if (saciedad <= 0 || energia <= 0 || diversion <= 0){
             System.out.println("(x_x) :( Game Over ):");
@@ -127,6 +132,18 @@ public class Main {
             saciedad -= 2;
             diversion -= 2;
             System.out.println("Zzz... El tamagotchi está durmiendo.");
+            mostrarEstado();
+        }
+    }
+
+    private static void entrenar() {
+        if (energia < 4) {
+            System.out.println("Estoy demasiado agotado para entrenar...");
+        } else {
+            experiencia += 10;
+            energia -= 4;
+            saciedad -= 2;
+            System.out.println("¡Entrenamiento duro! Has ganado 10 puntos de experiencia.");
             mostrarEstado();
         }
     }
