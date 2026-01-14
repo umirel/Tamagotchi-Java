@@ -91,12 +91,13 @@ public class Main {
         if (saciedad >= 10) {
             System.out.println("No tengo hambre");
         } else {
-            saciedad += 5;
+            saciedad += 3;
             if (saciedad > 10) {
                 saciedad = 10;
             }
             diversion -= 1;
             System.out.println("¡Ñam ñam! La saciedad ha aumentado.");
+            mostrarEstado();
         }
     }
 }
