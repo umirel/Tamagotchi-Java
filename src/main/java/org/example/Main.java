@@ -9,9 +9,30 @@ public class Main {
     static int diversion = 6;
 
     public static void main(String[] args) {
-        int opcion = menuPrincipal();
-        System.out.println("Has seleccionado: " + opcion);
-        mostrarEstado();
+        int opcion;
+
+        do {
+            opcion = menuPrincipal();
+
+            switch (opcion) {
+                case 1:
+                    // Implementación de la opción 1
+                    mostrarEstado();
+                    break;
+                case 2:
+                    System.out.println("Opción Comer seleccionada (luego)");
+                    break;
+                case 3:
+                    System.out.println("Opción Jugar seleccionada (luego)");
+                    break;
+                case 4:
+                    System.out.println("Opción Dormir seleccionada (luego)");
+                    break;
+                case 0:
+                    System.out.println("¡Hasta luego!");
+                    break;
+            }
+        } while (opcion != 0);
     }
 
     private static int menuPrincipal() {
