@@ -114,4 +114,5 @@ public class Main {
             System.out.println("¡Yuhu! Nos lo estamos pasando genial.");
             mostrarEstado();
         }
+    }
 }
