@@ -16,11 +16,10 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    // Implementación de la opción 1
                     mostrarEstado();
                     break;
                 case 2:
-                    System.out.println("Opción Comer seleccionada (luego)");
+                    comer();
                     break;
                 case 3:
                     System.out.println("Opción Jugar seleccionada (luego)");
@@ -85,6 +84,19 @@ public class Main {
             System.out.println("(•‿•) ¡Estoy feliz!");
             System.out.println("/|_|\\");
             System.out.println(" | |");
+        }
+    }
+
+    private static void comer() {
+        if (saciedad >= 10) {
+            System.out.println("No tengo hambre");
+        } else {
+            saciedad += 5;
+            if (saciedad > 10) {
+                saciedad = 10;
+            }
+            diversion -= 1;
+            System.out.println("¡Ñam ñam! La saciedad ha aumentado.");
         }
     }
 }
