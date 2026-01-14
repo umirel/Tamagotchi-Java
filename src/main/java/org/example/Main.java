@@ -91,11 +91,11 @@ public class Main {
         if (saciedad >= 10) {
             System.out.println("No tengo hambre");
         } else {
-            saciedad += 3;
+            saciedad += 4;
             if (saciedad > 10) {
                 saciedad = 10;
             }
-            diversion -= 1;
+            diversion -= 2;
             System.out.println("¡Ñam ñam! La saciedad ha aumentado.");
             mostrarEstado();
         }
@@ -105,12 +105,12 @@ public class Main {
         if (diversion >= 10) {
             System.out.println("Ahora no me apetece jugar");
         } else {
-            diversion += 3;
+            diversion += 4;
             if (diversion > 10) {
                 diversion = 10;
             }
-            saciedad -= 1;
-            energia -= 1;
+            saciedad -= 2;
+            energia -= 2;
             System.out.println("¡Yuhu! Nos lo estamos pasando genial.");
             mostrarEstado();
         }
@@ -124,7 +124,7 @@ public class Main {
             if (energia > 10) {
                 energia = 10;
             }
-            saciedad -= 3;
+            saciedad -= 2;
             diversion -= 2;
             System.out.println("Zzz... El tamagotchi está durmiendo.");
             mostrarEstado();
