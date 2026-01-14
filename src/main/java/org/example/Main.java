@@ -25,7 +25,7 @@ public class Main {
                     jugar();
                     break;
                 case 4:
-                    System.out.println("Opción Dormir seleccionada (luego)");
+                    dormir();
                     break;
                 case 0:
                     System.out.println("¡Hasta luego!");
@@ -112,6 +112,21 @@ public class Main {
             saciedad -= 1;
             energia -= 1;
             System.out.println("¡Yuhu! Nos lo estamos pasando genial.");
+            mostrarEstado();
+        }
+    }
+
+    private static void dormir() {
+        if (energia >= 10) {
+            System.out.println("No tengo sueño");
+        } else {
+            energia += 3;
+            if (energia > 10) {
+                energia = 10;
+            }
+            saciedad -= 3;
+            diversion -= 2;
+            System.out.println("Zzz... El tamagotchi está durmiendo.");
             mostrarEstado();
         }
     }
